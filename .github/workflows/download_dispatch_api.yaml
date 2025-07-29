@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # 工作流输入
-      JM_ALBUM_IDS: ${{ github.event.event.JM_ALBUM_IDS }}
-      JM_PHOTO_IDS: ${{ github.event.event.JM_PHOTO_IDS }}
-      DIR_RULE: ${{ github.event.event.DIR_RULE }}
-      CLIENT_IMPL: ${{ github.event.event.CLIENT_IMPL }}
-      ZIP_NAME: ${{ github.event.event.ZIP_NAME }}
-      UPLOAD_NAME: ${{ github.event.event.UPLOAD_NAME }}
-      IMAGE_SUFFIX: ${{ github.event.event.IMAGE_SUFFIX }}
+      JM_ALBUM_IDS: ${{ github.event.JM_ALBUM_IDS }}
+      JM_PHOTO_IDS: ${{ github.event.JM_PHOTO_IDS }}
+      DIR_RULE: ${{ github.event.DIR_RULE }}
+      CLIENT_IMPL: ${{ github.event.CLIENT_IMPL }}
+      ZIP_NAME: ${{ github.event.ZIP_NAME }}
+      UPLOAD_NAME: ${{ github.event.UPLOAD_NAME }}
+      IMAGE_SUFFIX: ${{ github.event.IMAGE_SUFFIX }}
 
       # 登录相关secrets
       JM_USERNAME: ${{ secrets.JM_USERNAME }}
