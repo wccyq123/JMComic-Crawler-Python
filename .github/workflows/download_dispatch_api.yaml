@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # 工作流输入
-      JM_ALBUM_IDS: ${{ github.event.JM_ALBUM_IDS }}
+      JM_ALBUM_IDS: ${{ github.event.client_payload.JM_ALBUM_IDS }}
       JM_PHOTO_IDS: ${{ github.event.JM_PHOTO_IDS }}
       DIR_RULE: ${{ github.event.DIR_RULE }}
       CLIENT_IMPL: ${{ github.event.CLIENT_IMPL }}
