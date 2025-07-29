@@ -1,6 +1,8 @@
 name: 下载JM本子 (dispatch)
 
 on:
+  repository_dispatch:
+    types: [trigger-by-api] # 可自定义事件类型Ï
   workflow_dispatch:
     inputs:
       JM_ALBUM_IDS:
