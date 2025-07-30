@@ -65,6 +65,11 @@ jobs:
           tar -zcvf "../$ZIP_NAME" ./
           mv "../$ZIP_NAME" .
 
+      - name: 记录ID
+        run: |
+          echo "JM_ALBUM_IDS ID: ${{ github.event.client_payload.JM_ALBUM_IDS }}"
+          echo "UserId: ${{ github.event.client_payload.userId }}"
+
       - name: 上传结果
         uses: actions/upload-artifact@v4
         with:
