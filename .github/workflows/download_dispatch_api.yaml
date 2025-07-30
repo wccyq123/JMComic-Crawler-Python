@@ -65,10 +65,15 @@ jobs:
           tar -zcvf "../$ZIP_NAME" ./
           mv "../$ZIP_NAME" .
 
-      - name: 记录ID
+      - name: Notify backend
         run: |
-          echo "JM_ALBUM_IDS ID: ${{ github.event.client_payload.JM_ALBUM_IDS }}"
-          echo "UserId: ${{ github.event.client_payload.userId }}"
+          curl -X POST https://download-hon-backend.vercel.app/downloadComplete \
+            -H "Content-Type: application/json" \
+            -d '{
+              "JM_ALBUM_IDS": "${{ github.event.client_payload.JM_ALBUM_IDS }}",
+              "userId":"${{ github.event.client_payload.userId }}",
+              "runId": "${{ github.run_id }}"
+            }'
 
       - name: 上传结果
         uses: actions/upload-artifact@v4
