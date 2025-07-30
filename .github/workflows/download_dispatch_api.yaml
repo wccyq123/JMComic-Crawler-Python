@@ -11,12 +11,12 @@ jobs:
     env:
       # 工作流输入
       JM_ALBUM_IDS: ${{ github.event.client_payload.JM_ALBUM_IDS }}
-      JM_PHOTO_IDS: ${{ github.event.JM_PHOTO_IDS }}
-      DIR_RULE: ${{ github.event.DIR_RULE }}
-      CLIENT_IMPL: ${{ github.event.CLIENT_IMPL }}
-      ZIP_NAME: ${{ github.event.ZIP_NAME }}
-      UPLOAD_NAME: ${{ github.event.UPLOAD_NAME }}
-      IMAGE_SUFFIX: ${{ github.event.IMAGE_SUFFIX }}
+      JM_PHOTO_IDS: ${{ github.event.client_payload.JM_PHOTO_IDS }}
+      DIR_RULE: ${{ github.event.client_payload.DIR_RULE }}
+      CLIENT_IMPL: ${{ github.event.client_payload.CLIENT_IMPL }}
+      ZIP_NAME: ${{ github.event.client_payload.ZIP_NAME }}
+      UPLOAD_NAME: ${{ github.event.client_payload.UPLOAD_NAME }}
+      IMAGE_SUFFIX: ${{ github.event.client_payload.IMAGE_SUFFIX }}
 
       # 登录相关secrets
       JM_USERNAME: ${{ secrets.JM_USERNAME }}
