@@ -62,7 +62,7 @@ jobs:
       - name: 压缩文件
         run: |
           cd $JM_DOWNLOAD_DIR
-          tar -zcvf "../$ZIP_NAME" ./
+          zip -r "../$ZIP_NAME" ./
           mv "../$ZIP_NAME" .
 
       - name: Notify backend
