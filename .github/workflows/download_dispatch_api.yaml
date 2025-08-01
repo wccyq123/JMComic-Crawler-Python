@@ -67,7 +67,7 @@ jobs:
 
       - name: Notify backend
         run: |
-          curl -X POST https://download-hon-backend.vercel.app/downloadComplete \
+          curl -X POST https://downloadhonbackend.zeabur.app/downloadComplete \
             -H "Content-Type: application/json" \
             -d '{
               "JM_ALBUM_IDS": "${{ github.event.client_payload.JM_ALBUM_IDS }}",
